@@ -1,17 +1,17 @@
 import React, { useState } from 'react'; 
-import { connect } from 'react-redux';
-import { changeColor} from './actions/resultlistA';
-import { createStore } from 'redux';
-import resultlistReducer from './reducer/resultlistR';
+// import { connect } from 'react-redux';
+// import { changeColor} from './actions/resultlistA';
+// import { createStore } from 'redux';
+// import resultlistReducer from './reducer/resultlistR';
 // import {css} from "emotion";
 
-const store = createStore(
-  resultlistReducer,
-  // If we want to use the Redux DevTools, add this argument as well!
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+// const store = createStore(
+//   resultlistReducer,
+//   // If we want to use the Redux DevTools, add this argument as well!
+//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+// );
 
-store.dispatch( changeColor( 'black' ) );
+// store.dispatch( changeColor( 'black' ) );
 
 function Home (props)
 { // Every component should return JSX.
@@ -20,15 +20,15 @@ function Home (props)
   let empty = props.empty;
   // let button =props.button;
   const [newColor, setColor] = useState('black');
-  const [background, setBackground] = useState("#fdfdfd");
+  // const [background, setBackground] = useState("#fdfdfd");
   const [button, setNewTheme] = useState();
 
-  let btnState = false;
+  // let btnState = false;
   function onFormSubmit(e) {
     e.preventDefault();
     console.log('Button was clicked');
     console.log(newColor);
-    props.dispatch(changeColor())
+    // props.dispatch(changeColor())
     
     // if(btnState !== false){
     //   const setBackground == red ;
@@ -61,13 +61,15 @@ function Home (props)
           <option value='orange'>Orange Modoe</option>
         </select>
         <input type='submit' className='submitBtn success' value='Submit'/>
-        {/* <button id="btnColor"
-        onClick={handleClick}
+        <button id="btnColor"
+        onClick={onFormSubmit}
         onChange={e => { setNewTheme( e.target.value ) }}
         value={button}
         > 
-        Change Theme </button> */}
+        Change Theme </button>
         </form>
+      
+       
     
         <h2> { input } </h2>
         <h2>This Website shows the difference between Global STORE and Local STORE</h2>
@@ -92,5 +94,5 @@ function Home (props)
   );
 }
 
-
-export default connect(state => {return {Home: state}})(Home);
+export default Home;
+// export default connect(state => {return {Home: state}})(Home);

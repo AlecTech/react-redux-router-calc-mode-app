@@ -10,13 +10,14 @@ const viewResults = resultContent => {
       payload: resultContent
     };
 }
-const changeColor = color => {
-  return {
-    type: 'CHANGE_THEME',
-    payload: color
-  };
-}
-export {viewResults, changeColor};
+// const changeColor = color => {
+//   return {
+//     type: 'CHANGE_THEME',
+//     payload: color
+//   };
+// }
+export{viewResults};
+// export {viewResults, changeColor};
 
 // const addNewToDo = toDoContent => {
 //     return {
